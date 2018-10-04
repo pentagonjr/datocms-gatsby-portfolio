@@ -5,18 +5,18 @@ import Img from 'gatsby-image'
 
 const IndexPage = ({ data }) => (
   <Masonry className="showcase">
-    {data.allDatoCmsWork.edges.map(({ node: work }) => (
-      <div key={work.id} className="showcase__item">
+    {data.allDatoCmsDoc.edges.map(({ node: doc }) => (
+      <div key={doc.id} className="showcase__item">
         <figure className="card">
-          <Link to={`/works/${work.slug}`} className="card__image">
+          <Link to={`/docs/${doc.slug}`} className="card__image">
             <Img sizes={work.coverImage.sizes} />
           </Link>
           <figcaption className="card__caption">
             <h6 className="card__title">
-              <Link to={`/works/${work.slug}`}>{work.title}</Link>
+              <Link to={`/docs/${doc.slug}`}>{doc.title}</Link>
             </h6>
             <div className="card__description">
-              <p>{work.excerpt}</p>
+              <p>{doc.excerpt}</p>
             </div>
           </figcaption>
         </figure>
@@ -29,7 +29,7 @@ export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
-    allDatoCmsWork(sort: { fields: [position], order: ASC }) {
+    allDatoCmsDoc(sort: { fields: [position], order: ASC }) {
       edges {
         node {
           id
