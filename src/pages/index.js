@@ -9,7 +9,12 @@ const IndexPage = ({ data }) => (
       <div key={doc.id} className="showcase__item">
         <figure className="card">
           <Link to={`/docs/${doc.slug}`} className="card__image">
-            <Img sizes={work.coverImage.sizes} />
+            <Img sizes={doc
+
+
+
+
+.coverImage.sizes} />
           </Link>
           <figcaption className="card__caption">
             <h6 className="card__title">
